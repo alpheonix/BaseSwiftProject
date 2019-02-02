@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var gradient: CAGradientLayer?
+    var bgImage: UIImageView?
+    let rect = CGRect(x: 100, y: 250, width: 180, height: 180)
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +31,17 @@ class HomeViewController: UIViewController {
         let next = LoginViewController.newInstance()
         self.navigationController?.pushViewController(next, animated: true)
         
+    }
+    
+    func addGradient() {
+        gradient = CAGradientLayer()
+        let startColor = UIColor(red: 220/255, green: 6/255, blue: 190/255, alpha: 3)
+        let endColor = UIColor(red: 0, green: 0, blue: 20, alpha: 3)
+        gradient?.colors = [startColor.cgColor,endColor.cgColor]
+        gradient?.startPoint = CGPoint(x: 0, y: 0)
+        gradient?.endPoint = CGPoint(x: 0, y:1)
+        gradient?.frame = view.frame
+        self.view.layer.insertSublayer(gradient!, at: 0)
     }
     
 }
