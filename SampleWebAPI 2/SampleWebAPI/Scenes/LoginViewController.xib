@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SampleWebAPI" customModuleProvider="target">
+            <connections>
+                <outlet property="PasswordField" destination="Pd3-sO-659" id="I71-7D-hBr"/>
+                <outlet property="UserField" destination="phG-ez-6kK" id="Ebz-Xw-5ye"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pd3-sO-659">
+                    <rect key="frame" x="20" y="390" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adU-hh-Lid">
+                    <rect key="frame" x="20" y="450" width="335" height="30"/>
+                    <state key="normal" title="Connect"/>
+                    <connections>
+                        <action selector="ConnectButton:" destination="-1" eventType="touchUpInside" id="rfz-Mg-UMM"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phG-ez-6kK">
+                    <rect key="frame" x="20" y="190" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="adU-hh-Lid" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3KN-wh-3RY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="phG-ez-6kK" secondAttribute="trailing" constant="20" id="4Ad-GY-4ER"/>
+                <constraint firstItem="Pd3-sO-659" firstAttribute="top" secondItem="phG-ez-6kK" secondAttribute="bottom" constant="170" id="HgZ-So-lsK"/>
+                <constraint firstItem="phG-ez-6kK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="RTM-uC-Ymn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adU-hh-Lid" secondAttribute="trailing" constant="20" id="UHR-P0-C1d"/>
+                <constraint firstItem="Pd3-sO-659" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aYL-3k-teq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pd3-sO-659" secondAttribute="trailing" constant="20" id="clm-Kl-RfV"/>
+                <constraint firstItem="adU-hh-Lid" firstAttribute="top" secondItem="Pd3-sO-659" secondAttribute="bottom" constant="30" id="d4s-we-v9i"/>
+                <constraint firstItem="phG-ez-6kK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="170" id="u7V-TO-hch"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
