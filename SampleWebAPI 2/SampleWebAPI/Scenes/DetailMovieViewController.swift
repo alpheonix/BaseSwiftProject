@@ -11,19 +11,25 @@ import UIKit
 class DetailMovieViewController: UIViewController {
     
     @IBOutlet weak var movieTittleLabel: UILabel!
-    
     @IBOutlet weak var ImageMovieDetail: UIImageView!
     
+    
+    @IBOutlet weak var descriptionMovieDetail: UITextView!
+    @IBOutlet weak var movieDateLabel: UILabel!
     
     public var movie: DetailMovie!
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        self.descriptionMovieDetail.text = self.movie.description
+        print(self.movie.titre)
+        self.movieDateLabel.text = self.movie.release_date
         self.movieTittleLabel.text = self.movie.titre
         let imageURL = URL(string: self.movie.poster)
         let imageData = try! Data(contentsOf: imageURL!)
         self.ImageMovieDetail.image = UIImage(data: imageData)
+        super.viewDidLoad()
+        
         
         
         // Do any additional setup after loading the view.

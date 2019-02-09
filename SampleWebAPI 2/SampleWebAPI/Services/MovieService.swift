@@ -16,7 +16,7 @@ public class MovieService {
     }
     
     public func getOneMovie(completion: @escaping (DetailMovie) -> Void){
-        SessionManager.default.request("https://api.themoviedb.org/3/movie/550?api_key=c2a65c4ec5c2e0b8847caec950444862&language=en-US").responseJSON { (res) in
+        SessionManager.default.request("https://api.themoviedb.org/3/movie/550?api_key=c2a65c4ec5c2e0b8847caec950444862&language=fr-FR").responseJSON { (res) in
             print(res.result.value)
             let result = res.result.value as! [String: Any]
             
