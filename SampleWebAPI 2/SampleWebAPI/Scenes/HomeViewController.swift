@@ -33,17 +33,11 @@ class HomeViewController: UIViewController {
         
     }
     
-<<<<<<< HEAD
-    @IBAction func connectToNewMovieList(_ sender: UIButton) {
-        MovieService.default.getMovies { (movies) in
-            let next = NewMoviesListViewController.newInstance(movies: movies)
-            self.navigationController?.pushViewController(next, animated: true)
-        }
         
-=======
+
     override func viewDidLayoutSubviews() {
         gradient?.frame = view.bounds
->>>>>>> e7785ccfd7af4920c193791b38d326d95fd15797
+
     }
     
     func addGradient() {
