@@ -9,12 +9,23 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    var gradient: CAGradientLayer?
+    var bgImage: UIImageView?
+    let rect = CGRect(x: 100, y: 250, width: 180, height: 180)
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            addGradient()
+    
+    
+        }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   
         
         // Do any additional setup after loading the view.
-    }
+    
+    
+  
     
     class func newInstance() -> LoginViewController {
         let mlvc = LoginViewController()
@@ -48,21 +59,23 @@ class LoginViewController: UIViewController {
             }
             
             
-            //let next = MovieListViewController.newInstance(movies: movies)//transfer donnée
-            //self.navigationController?.pushViewController(next, animated: true)// changement graphique
+           
         }
+    }
+    override func viewDidLayoutSubviews() {
+        gradient?.frame = view.bounds
+    }
+    func addGradient() {
+        gradient = CAGradientLayer()
+        let startColor = UIColor(red: 220.0/255, green: 6.0/255, blue: 190.0/255, alpha: 1)
+        let endColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
+        gradient?.colors = [startColor.cgColor,endColor.cgColor]
+        gradient?.startPoint = CGPoint(x: 0, y: 0)
+        gradient?.endPoint = CGPoint(x: 0, y:1)
+        gradient?.frame = view.bounds
+        self.view.layer.insertSublayer(gradient!, at: 0)
     }
 }
 
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
 
 

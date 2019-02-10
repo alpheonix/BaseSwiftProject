@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     let rect = CGRect(x: 100, y: 250, width: 180, height: 180)
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addGradient()
         
         // Do any additional setup after loading the view.
     }
@@ -33,22 +33,27 @@ class HomeViewController: UIViewController {
         
     }
     
+<<<<<<< HEAD
     @IBAction func connectToNewMovieList(_ sender: UIButton) {
         MovieService.default.getMovies { (movies) in
             let next = NewMoviesListViewController.newInstance(movies: movies)
             self.navigationController?.pushViewController(next, animated: true)
         }
         
+=======
+    override func viewDidLayoutSubviews() {
+        gradient?.frame = view.bounds
+>>>>>>> e7785ccfd7af4920c193791b38d326d95fd15797
     }
     
     func addGradient() {
         gradient = CAGradientLayer()
-        let startColor = UIColor(red: 220/255, green: 6/255, blue: 190/255, alpha: 3)
-        let endColor = UIColor(red: 0, green: 0, blue: 20, alpha: 3)
+        let startColor = UIColor(red: 220.0/255, green: 6.0/255, blue: 190.0/255, alpha: 1)
+        let endColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
         gradient?.colors = [startColor.cgColor,endColor.cgColor]
         gradient?.startPoint = CGPoint(x: 0, y: 0)
         gradient?.endPoint = CGPoint(x: 0, y:1)
-        gradient?.frame = view.frame
+        gradient?.frame = view.bounds
         self.view.layer.insertSublayer(gradient!, at: 0)
     }
     
