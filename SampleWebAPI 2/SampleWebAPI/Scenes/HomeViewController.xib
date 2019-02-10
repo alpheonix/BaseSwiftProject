@@ -34,17 +34,27 @@
                         <action selector="SignInButton:" destination="-1" eventType="touchUpInside" id="fcN-YH-J6O"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKB-AR-agu">
+                    <rect key="frame" x="114.5" y="562" width="146" height="30"/>
+                    <state key="normal" title="List des films en salle"/>
+                    <connections>
+                        <action selector="connectToNewMovieList:" destination="-1" eventType="touchUpInside" id="N5M-bh-LJu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="XEh-8g-emm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="170" id="8fE-8e-pco"/>
                 <constraint firstItem="ubF-8m-uIP" firstAttribute="top" secondItem="XEh-8g-emm" secondAttribute="bottom" constant="170" id="8r3-CG-wQt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XEh-8g-emm" secondAttribute="trailing" constant="20" id="Wkh-RM-rGX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cKB-AR-agu" secondAttribute="bottom" constant="75" id="YHG-FS-cuf"/>
                 <constraint firstItem="XEh-8g-emm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eml-FV-u3j"/>
                 <constraint firstItem="ubF-8m-uIP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gaR-1I-yyd"/>
+                <constraint firstItem="cKB-AR-agu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p9Q-tJ-F51"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ubF-8m-uIP" secondAttribute="trailing" constant="20" id="pZE-DD-A2a"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="139.880059970015"/>
         </view>
     </objects>
 </document>
