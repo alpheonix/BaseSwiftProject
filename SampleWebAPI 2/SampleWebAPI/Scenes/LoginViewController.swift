@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
                     MovieService.default.getMovies { (movies) in
             let next = NewMoviesListViewController.newInstance(movies: movies)
             self.navigationController?.pushViewController(next, animated: true)
-                                                    
+                    }
                     //let next = MovieListViewController.newInstance()
                     //self.navigationController?.pushViewController(next, animated: true)
                 }

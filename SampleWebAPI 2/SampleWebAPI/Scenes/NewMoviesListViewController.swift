@@ -36,6 +36,15 @@ extension NewMoviesListViewController: UITableViewDataSource {
     
     public static let movieCellId = "MOVIE_CELL_IDENTIFIER"
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(self.movies[indexPath.row].id)
+        MovieService.default.getOneMovie(id:self.movies[indexPath.row].id) { (movie) in
+                let detail = DetailMovieViewController.newInstance(movie: movie)
+                self.navigationController?.pushViewController(detail, animated: true)
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies.count
     }
