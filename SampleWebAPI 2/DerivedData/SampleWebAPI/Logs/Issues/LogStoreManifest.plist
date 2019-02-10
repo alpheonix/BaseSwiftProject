@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>0D8DDD9B-09C7-40E2-9817-53BB47D79A6D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>0D8DDD9B-09C7-40E2-9817-53BB47D79A6D.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>Alamofire-dwiqrktrspdcdtbvetbphotxzztj</string>
+			<key>timeStartedRecording</key>
+			<real>571177522.94120097</real>
+			<key>timeStoppedRecording</key>
+			<real>571177522.94810402</real>
+			<key>title</key>
+			<string>Build target Alamofire</string>
+			<key>uniqueIdentifier</key>
+			<string>0D8DDD9B-09C7-40E2-9817-53BB47D79A6D</string>
+		</dict>
+		<key>9FB045A1-2425-4CEE-9EEF-62E325351CFD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>9FB045A1-2425-4CEE-9EEF-62E325351CFD.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>SampleWebAPI-fmmddwyxktunnhhkzsvhovpxhifh</string>
+			<key>timeStartedRecording</key>
+			<real>571427389.59273899</real>
+			<key>timeStoppedRecording</key>
+			<real>571427391.16802299</real>
+			<key>title</key>
+			<string>Build target SampleWebAPI</string>
+			<key>uniqueIdentifier</key>
+			<string>9FB045A1-2425-4CEE-9EEF-62E325351CFD</string>
+		</dict>
+		<key>C9B4D27B-CA18-4B61-A144-569FCED61D7C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>C9B4D27B-CA18-4B61-A144-569FCED61D7C.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>Pods-SampleWebAPI-dwiqrktrspdcdtbvetbphotxzztj</string>
+			<key>timeStartedRecording</key>
+			<real>571177136.65671206</real>
+			<key>timeStoppedRecording</key>
+			<real>571177137.56249797</real>
+			<key>title</key>
+			<string>Build target Pods-SampleWebAPI</string>
+			<key>uniqueIdentifier</key>
+			<string>C9B4D27B-CA18-4B61-A144-569FCED61D7C</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>

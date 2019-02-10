@@ -33,6 +33,14 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func connectToNewMovieList(_ sender: UIButton) {
+        MovieService.default.getMovies { (movies) in
+            let next = NewMoviesListViewController.newInstance(movies: movies)
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+        
+    }
+    
     func addGradient() {
         gradient = CAGradientLayer()
         let startColor = UIColor(red: 220/255, green: 6/255, blue: 190/255, alpha: 3)

@@ -1,0 +1,6 @@
+framework module Pods_SampleWebAPI {
+  umbrella header "Pods-SampleWebAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}
