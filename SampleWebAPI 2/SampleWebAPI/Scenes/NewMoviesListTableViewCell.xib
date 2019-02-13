@@ -41,6 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="42o-bP-aJw" secondAttribute="trailing" constant="10" id="2Pc-O3-roP"/>
                     <constraint firstItem="x12-Br-3CH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="IyI-BJ-5rw"/>
@@ -57,6 +58,7 @@
                     <constraint firstItem="42o-bP-aJw" firstAttribute="top" secondItem="x12-Br-3CH" secondAttribute="bottom" constant="10" id="tY6-17-xZz"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="PosterImageView" destination="p1m-f7-SeJ" id="GWh-hB-bM4"/>

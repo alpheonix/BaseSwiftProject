@@ -20,6 +20,13 @@ class NewMoviesListViewController: UIViewController {
         return mlvc
     }
     override func viewDidLoad() {
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "Image")
+        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         super.viewDidLoad()
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
@@ -53,12 +60,15 @@ extension NewMoviesListViewController: UITableViewDataSource {
         let cell = movieTableView.dequeueReusableCell(withIdentifier: NewMoviesListViewController.movieCellId, for: indexPath) as! NewMoviesListTableViewCell
         let movie = self.movies[indexPath.row]
         cell.titleLabel.text = movie.title
+        cell.titleLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
+
         cell.descriptionLabel.text =  movie.description
-        
+        cell.descriptionLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         cell.releasedDateLabel.text = dateFormatter.string(from: movie.releaseDate)
+        cell.releasedDateLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
         
         var url: String = "https://image.tmdb.org/t/p/w185//"
         url.append(movie.image)

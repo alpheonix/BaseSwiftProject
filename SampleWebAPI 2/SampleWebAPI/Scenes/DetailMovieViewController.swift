@@ -21,10 +21,19 @@ class DetailMovieViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        descriptionMovieDetail.backgroundColor = UIColor.clear
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "Image")
+        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+
         self.descriptionMovieDetail.text = self.movie.description
+        self.descriptionMovieDetail.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
         print(self.movie.titre)
         self.movieDateLabel.text = self.movie.release_date
+        self.movieDateLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
         self.movieTittleLabel.text = self.movie.titre
+        self.movieTittleLabel.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
         let imageURL = URL(string: self.movie.poster)
         let imageData = try! Data(contentsOf: imageURL!)
         self.ImageMovieDetail.image = UIImage(data: imageData)
