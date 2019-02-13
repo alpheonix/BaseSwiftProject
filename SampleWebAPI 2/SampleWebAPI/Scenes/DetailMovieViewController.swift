@@ -13,6 +13,7 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var movieTittleLabel: UILabel!
     @IBOutlet weak var ImageMovieDetail: UIImageView!
     
+    @IBOutlet weak var RateMovie: UILabel!
     
     @IBOutlet weak var descriptionMovieDetail: UITextView!
     @IBOutlet weak var movieDateLabel: UILabel!

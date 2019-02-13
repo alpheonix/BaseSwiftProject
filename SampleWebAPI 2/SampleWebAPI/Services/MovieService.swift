@@ -45,8 +45,7 @@ public class MovieService {
         SessionManager.default.request("https://api.themoviedb.org/3/movie/\(id)?api_key=c2a65c4ec5c2e0b8847caec950444862&language=fr-FR").responseJSON { (res) in
             print(res.result.value)
             let result = res.result.value as! [String: Any]
-            
-            let movies = DetailMovie(titre:result["original_title"] as! String,description:result["overview"] as! String,poster:result["poster_path"] as! String,id:result["id"] as! Int,release_date: result["release_date"] as! String )
+            let movies = DetailMovie(titre:result["original_title"] as! String,description:result["overview"] as! String,poster:result["poster_path"] as! String,id:result["id"] as! Int,release_date: result["release_date"] as! String)
             completion(movies)
 
         }
