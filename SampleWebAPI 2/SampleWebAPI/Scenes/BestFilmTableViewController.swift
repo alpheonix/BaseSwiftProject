@@ -46,12 +46,7 @@ extension BestFilmTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(self.movies[indexPath.row].id)
-        MovieService.default.addAsFavourite(id: self.movies[indexPath.row].id,session: session) { (res) in
-            if res {
-                
-            }
-            print("fin")
-        }
+        
         
     }
     
