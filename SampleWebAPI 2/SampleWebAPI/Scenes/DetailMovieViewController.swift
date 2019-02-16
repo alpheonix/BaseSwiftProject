@@ -19,8 +19,19 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var movieDateLabel: UILabel!
     
     public var movie: DetailMovie!
+    var session: Session!
     
     
+    @IBAction func addFavourite(_ sender: Any) {
+        MovieService.default.addAsFavourite(id: movie.id,session: session) { (res) in
+            if res {
+                let alert = UIAlertController(title: "Favoris", message: "Le film a été ajouté a la liste des favoris", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+            print("fin")
+        }
+    }
     override func viewDidLoad() {
         descriptionMovieDetail.backgroundColor = UIColor.clear
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -44,9 +55,10 @@ class DetailMovieViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    class func newInstance(movie: DetailMovie) -> DetailMovieViewController {
+    class func newInstance(movie: DetailMovie,session: Session) -> DetailMovieViewController {
         let detail = DetailMovieViewController()
         detail.movie = movie
+        detail.session = session
         return detail
         
         

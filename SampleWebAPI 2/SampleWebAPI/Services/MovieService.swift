@@ -50,4 +50,42 @@ public class MovieService {
 
         }
     }
+    
+    public func getBestMovies(completion: @escaping ([BestMovies]) -> Void) {
+        Alamofire.request("https://api.themoviedb.org/3/movie/top_rated?api_key=c2a65c4ec5c2e0b8847caec950444862&language=fr-FR").responseJSON{ (res) in
+            guard let result = res.value as? [String:Any],
+                let resultat2 = result["results"] as? [[String:Any]] else {
+                    return
+                    
+            }
+            
+            
+            let movie = resultat2.compactMap({ (elem) -> BestMovies? in
+                return BestMovies(json: elem)
+            })
+            completion(movie)
+        }
+    }
+    
+    public func addAsFavourite(id:Int,session: Session,completion: @escaping (Bool) -> Void){
+        print("fav")
+        let session_id = session.session_id
+        let account_id = session.account_id
+        
+        let param = [
+            
+            "media_type": "movie",
+            "media_id": id,
+            "favorite": true
+            ] as [String : Any]
+        Alamofire.request("https://api.themoviedb.org/3/account/\(account_id)/favorite?api_key=c2a65c4ec5c2e0b8847caec950444862&session_id=\(session_id)",method: .post, parameters: param, encoding: JSONEncoding.default).responseJSON{ (res) in
+            let result = res.result.value as! [String: Any]
+            print(result["status_code"])
+            let code = result["status_code"] as! Int
+            completion(code == 1 || code == 12)
+        }
+    
+        
+    }
 }
+

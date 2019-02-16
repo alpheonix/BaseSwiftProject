@@ -11,12 +11,15 @@ import UIKit
 class NewMoviesListViewController: UIViewController {
 
     var movies: [Movie]!
+    var session: Session!
+    
     
     @IBOutlet var movieTableView: UITableView!
     
-    class func newInstance(movies: [Movie]) -> NewMoviesListViewController{
+    class func newInstance(movies: [Movie],session: Session) -> NewMoviesListViewController{
         let mlvc = NewMoviesListViewController()
         mlvc.movies = movies
+        mlvc.session = session
         return mlvc
     }
     override func viewDidLoad() {
@@ -26,6 +29,8 @@ class NewMoviesListViewController: UIViewController {
         backgroundImage.image = UIImage(named: "Image")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFav))]
+
         
         super.viewDidLoad()
         self.movieTableView.delegate = self
@@ -33,7 +38,15 @@ class NewMoviesListViewController: UIViewController {
         self.movieTableView.register(UINib(nibName: "NewMoviesListTableViewCell", bundle: nil), forCellReuseIdentifier: NewMoviesListViewController.movieCellId)
         // Do any additional setup after loading the view.
     }
+    
+    @objc func addFav() {
+        MovieService.default.getBestMovies { (movies) in
+            let next = BestFilmTableViewController.newInstance(movies: movies,session: self.session)
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+    }
 }
+
 
 extension NewMoviesListViewController: UITableViewDelegate {
     
@@ -46,7 +59,7 @@ extension NewMoviesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(self.movies[indexPath.row].id)
         MovieService.default.getOneMovie(id:self.movies[indexPath.row].id) { (movie) in
-                let detail = DetailMovieViewController.newInstance(movie: movie)
+                let detail = DetailMovieViewController.newInstance(movie: movie,session: self.session)
                 self.navigationController?.pushViewController(detail, animated: true)
         }
         
