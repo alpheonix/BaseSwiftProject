@@ -49,17 +49,16 @@ class LoginViewController: UIViewController {
             }
             let token = connect.token
             
-            ConnexionService.default.connect(token: token,username: username, pwd: pwd){ (result) in
-                print(result)
-                if result {
+            ConnexionService.default.connect(token: token,username: username, pwd: pwd){ (session) in
+                
+                if session.account_id != 0 {
                     MovieService.default.getMovies { (movies) in
-            let next = NewMoviesListViewController.newInstance(movies: movies)
-            self.navigationController?.pushViewController(next, animated: true)
+                        let next = NewMoviesListViewController.newInstance(movies: movies, session: session)
+                        self.navigationController?.pushViewController(next, animated: true)
                     }
-                    //let next = MovieListViewController.newInstance()
-                    //self.navigationController?.pushViewController(next, animated: true)
                 }
-                return false
+                return session
+                
             }
             
             
