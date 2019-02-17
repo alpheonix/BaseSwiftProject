@@ -20,16 +20,32 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEh-8g-emm">
-                    <rect key="frame" x="20" y="190" width="335" height="30"/>
+                <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEh-8g-emm" colorLabel="IBBuiltInLabel-Green">
+                    <rect key="frame" x="16" y="465" width="343" height="78"/>
+                    <color key="backgroundColor" red="0.064092356656581223" green="0.08502664409329598" blue="0.49619494818652854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" button="YES" image="YES" staticText="YES"/>
+                    </accessibility>
+                    <rect key="contentStretch" x="0.59999999999999998" y="0.40000000000000002" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="78" id="gcc-sy-tcy"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Login"/>
                     <connections>
                         <action selector="connectToMovieAPI:" destination="-1" eventType="touchUpInside" id="TB8-Hq-Q0f"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubF-8m-uIP">
-                    <rect key="frame" x="20" y="390" width="335" height="30"/>
-                    <state key="normal" title="Signin"/>
+                    <rect key="frame" x="16" y="569" width="343" height="71"/>
+                    <color key="backgroundColor" red="0.065660580992698669" green="0.086179845035076141" blue="0.49807161092758179" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="dsB-JL-EvX"/>
+                    </constraints>
+                    <color key="tintColor" red="0.18933245304849167" green="0.95904319693226114" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Signin">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="SignInButton:" destination="-1" eventType="touchUpInside" id="fcN-YH-J6O"/>
                     </connections>
@@ -37,12 +53,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="XEh-8g-emm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="170" id="8fE-8e-pco"/>
-                <constraint firstItem="ubF-8m-uIP" firstAttribute="top" secondItem="XEh-8g-emm" secondAttribute="bottom" constant="170" id="8r3-CG-wQt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XEh-8g-emm" secondAttribute="trailing" constant="20" id="Wkh-RM-rGX"/>
-                <constraint firstItem="XEh-8g-emm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eml-FV-u3j"/>
-                <constraint firstItem="ubF-8m-uIP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gaR-1I-yyd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ubF-8m-uIP" secondAttribute="trailing" constant="20" id="pZE-DD-A2a"/>
+                <constraint firstItem="ubF-8m-uIP" firstAttribute="top" secondItem="XEh-8g-emm" secondAttribute="bottom" constant="26" id="56S-TT-kYZ"/>
+                <constraint firstItem="XEh-8g-emm" firstAttribute="trailing" secondItem="ubF-8m-uIP" secondAttribute="trailing" id="9PE-S4-scy"/>
+                <constraint firstItem="XEh-8g-emm" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="9c7-Jc-AoH"/>
+                <constraint firstItem="XEh-8g-emm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="Mbx-Vt-MrW"/>
+                <constraint firstItem="XEh-8g-emm" firstAttribute="leading" secondItem="ubF-8m-uIP" secondAttribute="leading" id="Xy0-On-Fcm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ubF-8m-uIP" secondAttribute="bottom" constant="27" id="n2E-YX-gqX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="139.880059970015"/>

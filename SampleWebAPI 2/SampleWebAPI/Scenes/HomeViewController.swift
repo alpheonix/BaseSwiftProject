@@ -10,8 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+   
+ 
     var gradient: CAGradientLayer?
-    var bgImage: UIImageView?
+
     let rect = CGRect(x: 100, y: 250, width: 180, height: 180)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +36,21 @@ class HomeViewController: UIViewController {
     }
     
         
-
-    override func viewDidLayoutSubviews() {
+    
+      override func viewDidLayoutSubviews() {
+        
         gradient?.frame = view.bounds
+        let mainImage = UIImage(named:"logo")
+        var mainImageView = UIImageView(image:mainImage)
+        mainImageView.center = self.view.center
+        mainImageView.contentMode = .scaleAspectFit
+        self.view.addSubview(mainImageView)
 
     }
     
     func addGradient() {
         gradient = CAGradientLayer()
-        let startColor = UIColor(red: 220.0/255, green: 6.0/255, blue: 190.0/255, alpha: 1)
+        let startColor = UIColor(red: 0.0/255, green: 0.0/255, blue: 9.0/255, alpha: 1)
         let endColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
         gradient?.colors = [startColor.cgColor,endColor.cgColor]
         gradient?.startPoint = CGPoint(x: 0, y: 0)
