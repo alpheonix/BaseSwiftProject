@@ -51,6 +51,7 @@
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-dY-DP8">
                     <rect key="frame" x="65" y="82" width="245" height="30"/>
+                    <color key="backgroundColor" red="0.065660580989999995" green="0.086179845039999994" blue="0.49807161090000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="Favoris">
                         <color key="titleColor" red="0.86518377590673579" green="0.85945792129570353" blue="0.076306549329543269" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
