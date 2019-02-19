@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewMoviesListViewController" customModule="SampleWebAPI" customModuleProvider="target">
             <connections>
                 <outlet property="movieTableView" destination="O3k-EQ-4ut" id="3bc-Am-hBb"/>
+                <outlet property="searchBar" destination="dYd-VR-7uO" id="a2N-1Q-EHv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,20 +23,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-EQ-4ut">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="101" width="375" height="566"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dYd-VR-7uO">
+                    <rect key="frame" x="0.0" y="45" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="O3k-EQ-4ut" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1WS-Fi-Vjr"/>
-                <constraint firstItem="O3k-EQ-4ut" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sgS-Mq-0Oo"/>
+                <constraint firstItem="dYd-VR-7uO" firstAttribute="bottom" secondItem="O3k-EQ-4ut" secondAttribute="top" id="QKW-D4-6sL"/>
+                <constraint firstItem="dYd-VR-7uO" firstAttribute="leading" secondItem="O3k-EQ-4ut" secondAttribute="leading" id="aXk-vO-QkE"/>
+                <constraint firstItem="dYd-VR-7uO" firstAttribute="trailing" secondItem="O3k-EQ-4ut" secondAttribute="trailing" id="ePy-gT-aCu"/>
+                <constraint firstItem="O3k-EQ-4ut" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="81" id="sgS-Mq-0Oo"/>
                 <constraint firstItem="O3k-EQ-4ut" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wC4-Ax-Qy8"/>
                 <constraint firstItem="O3k-EQ-4ut" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="zD0-oA-VVM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="138.40000000000001" y="140.77961019490255"/>
+            <point key="canvasLocation" x="138.40000000000001" y="139.880059970015"/>
         </view>
     </objects>
 </document>

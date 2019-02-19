@@ -8,11 +8,12 @@
 
 import UIKit
 
-class NewMoviesListViewController: UIViewController {
+class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
 
     var movies: [Movie]!
     var session: Session!
     
+    @IBOutlet var searchBar: UISearchBar!
     
     @IBOutlet var movieTableView: UITableView!
     
@@ -29,7 +30,8 @@ class NewMoviesListViewController: UIViewController {
         backgroundImage.image = UIImage(named: "Image")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFav))]
+        searchBar.delegate = self
+        self.searchBar.becomeFirstResponder()
 
         
         super.viewDidLoad()
@@ -39,12 +41,15 @@ class NewMoviesListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @objc func addFav() {
-        MovieService.default.getBestMovies { (movies) in
-            let next = BestFilmTableViewController.newInstance(movies: movies,session: self.session)
-            self.navigationController?.pushViewController(next, animated: true)
-        }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //tu fais la requete https://developers.themoviedb.org/3/search/search-movie
+        //tu change de view
+        // tu cree une liste 
+        
+        print("serchbaar")
     }
+    
+    
 }
 
 

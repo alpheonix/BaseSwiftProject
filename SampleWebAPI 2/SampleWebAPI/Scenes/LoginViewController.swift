@@ -16,8 +16,6 @@ class LoginViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             addGradient()
-    
-    
         }
 
    
@@ -65,6 +63,10 @@ class LoginViewController: UIViewController {
            
         }
     }
+    
+    
+    
+    
     override func viewDidLayoutSubviews() {
         gradient?.frame = view.bounds
         let mainImage = UIImage(named:"logo")
