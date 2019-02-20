@@ -80,5 +80,20 @@ public class ConnexionService {
         
         
         }
+    public func disconect(session_id:String, completion:@escaping (Bool) -> Bool){
+        let param = [
+            
+            "session_id": session_id
+        ]
+        print(session_id)
+        Alamofire.request("https://api.themoviedb.org/3/authentication/session?api_key=c2a65c4ec5c2e0b8847caec950444862", method: .delete, parameters: param).responseJSON { (response) in
+            print(response)
+            let success = response.result.value as! [String: Any]
+            print(success["success"] as! Bool)
+            completion(success["success"] as! Bool)
+        }
+        
+        
+    }
     }
 

@@ -15,6 +15,12 @@ class HomeViewController: UIViewController {
     var gradient: CAGradientLayer?
 
     let rect = CGRect(x: 100, y: 250, width: 180, height: 180)
+    
+    class func newInstance() -> HomeViewController{
+        let home = HomeViewController( )
+        return home
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addGradient()

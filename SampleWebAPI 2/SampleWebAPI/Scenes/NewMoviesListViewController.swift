@@ -24,8 +24,7 @@ class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
         return mlvc
     }
     override func viewDidLoad() {
-        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
+        
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Image")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
@@ -38,7 +37,27 @@ class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
         self.movieTableView.register(UINib(nibName: "NewMoviesListTableViewCell", bundle: nil), forCellReuseIdentifier: NewMoviesListViewController.movieCellId)
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(disconnect)),
+            UIBarButtonItem(title: "Liste Favoris", style: .plain, target: self, action: #selector(listFav))
+        ]
         // Do any additional setup after loading the view.
+    }
+    @objc func disconnect(){
+        ConnexionService.default.disconect(session_id: session.session_id) { (success) -> Bool in
+            if(success){
+                let home = HomeViewController.newInstance()
+                self.navigationController?.pushViewController(home, animated: true)
+            }
+            return true
+        }
+    }
+    
+    @objc func listFav(){
+        MovieService.default.getFav(session: session) { (movies) in
+            let fav = NewMoviesListViewController.newInstance(movies: movies, session: self.session)
+            self.navigationController?.pushViewController(fav, animated: true)
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

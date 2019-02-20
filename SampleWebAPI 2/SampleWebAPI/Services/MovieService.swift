@@ -87,5 +87,22 @@ public class MovieService {
     
         
     }
+    public func getFav(session:Session,completion: @escaping ([Movie]) -> Void) {
+        let account_id = session.account_id
+        let session_id = session.session_id
+        Alamofire.request("https://api.themoviedb.org/3/account/\(account_id)/favorite/movies?api_key=c2a65c4ec5c2e0b8847caec950444862&session_id=\(session_id)&language=fr-FR&sort_by=created_at.asc&page=1").responseJSON{ (res) in
+            guard let result = res.value as? [String:Any],
+                let resultat2 = result["results"] as? [[String:Any]] else {
+                    return
+                    
+            }
+            
+            
+            let movie = resultat2.compactMap({ (elem) -> Movie? in
+                return Movie(json: elem)
+            })
+            completion(movie)
+        }
+    }
 }
 

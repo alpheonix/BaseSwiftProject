@@ -22,7 +22,7 @@ class DetailMovieViewController: UIViewController {
     var session: Session!
     
     
-    @IBAction func addFavourite(_ sender: Any) {
+    @objc func addFavourite() {
         MovieService.default.addAsFavourite(id: movie.id,session: session) { (res) in
             if res {
                 let alert = UIAlertController(title: "Favoris", message: "Le film a été ajouté a la liste des favoris", preferredStyle: .alert)
@@ -30,6 +30,15 @@ class DetailMovieViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             print("fin")
+        }
+    }
+    @objc func disconnect(){
+        ConnexionService.default.disconect(session_id: session.session_id) { (success) -> Bool in
+            if(success){
+                let home = HomeViewController.newInstance()
+                self.navigationController?.pushViewController(home, animated: true)
+            }
+            return true
         }
     }
     override func viewDidLoad() {
@@ -49,6 +58,10 @@ class DetailMovieViewController: UIViewController {
         let imageURL = URL(string: self.movie.poster)
         let imageData = try! Data(contentsOf: imageURL!)
         self.ImageMovieDetail.image = UIImage(data: imageData)
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(disconnect)),
+            UIBarButtonItem(title: "Favoris", style: .plain, target: self, action: #selector(addFavourite))
+        ]
         super.viewDidLoad()
         
         
