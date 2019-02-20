@@ -23,7 +23,7 @@ public class ConnexionService {
             completion(movies)
     }
 }
-    public func connect(token:String, username:String, pwd:String, completion:@escaping (Session) -> Session) {
+public func connect(token:String, username:String, pwd:String, completion:@escaping (Session) -> Session ) {
         
         let baseUrl = "https://api.themoviedb.org/3/authentication/token/validate_with_login"
         let queryStringParam  =  [
@@ -50,34 +50,41 @@ public class ConnexionService {
         //Now use this URLRequest with Alamofire to make request
         Alamofire.request(request).responseJSON { response in
             let result = response.result.value  as! [String: Any]
-            
-            let sessionParam = [
-                "request_token": token
-            ]
-            
-            Alamofire.request("https://api.themoviedb.org/3/authentication/session/new?api_key=c2a65c4ec5c2e0b8847caec950444862",method: .post, parameters: sessionParam, encoding: JSONEncoding.default).responseJSON{ (res) in
-                let result = res.result.value as! [String: Any]
-                //print(result["success"])
-                //print(result["status_message"]as! String)
-                //print(result["status_code"])
-//                print("session")
-//                print(result["session_id"])
-                let session_id = result["session_id"] as! String
-                Alamofire.request("https://api.themoviedb.org/3/account?api_key=c2a65c4ec5c2e0b8847caec950444862&session_id=\(session_id)").responseJSON{ (response) in
-                    let account = response.result.value  as! [String: Any]
-                    print("id")
-                    let account_id = account["id"] as! Int
-                    let sessions = Session(account_id: account_id, session_id: session_id)
+            print ("success")
+            print(result["success"])
+            if(result["success"] != nil ){
+                print ("enter")
+                let sessionParam = [
+                    "request_token": token
+                ]
+                
+                Alamofire.request("https://api.themoviedb.org/3/authentication/session/new?api_key=c2a65c4ec5c2e0b8847caec950444862",method: .post, parameters: sessionParam, encoding: JSONEncoding.default).responseJSON{ (res) in
+                    let result = res.result.value as! [String: Any]
+                    //print(result["success"])
+                    //print(result["status_message"]as! String)
+                    //print(result["status_code"])
+                    //                print("session")
+                    //                print(result["session_id"])
+                    let session_id = result["session_id"] as! String
+                    Alamofire.request("https://api.themoviedb.org/3/account?api_key=c2a65c4ec5c2e0b8847caec950444862&session_id=\(session_id)").responseJSON{ (response) in
+                        let account = response.result.value  as! [String: Any]
+                        print("id")
+                        let account_id = account["id"] as! Int
+                        let sessions = Session(account_id: account_id, session_id: session_id)
+                        
+                        completion(sessions)
+                    }
                     
-                    completion(sessions)
+                    
                 }
+            }else{
+                let sessions = Session(account_id: 0, session_id: "0")
                 
-                
+                completion(sessions)
             }
             
             
         }
-        
         
         }
     public func disconect(session_id:String, completion:@escaping (Bool) -> Bool){
