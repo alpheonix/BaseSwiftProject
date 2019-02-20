@@ -29,6 +29,8 @@ class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
         backgroundImage.image = UIImage(named: "Image")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
         searchBar.delegate = self
         self.searchBar.becomeFirstResponder()
 
