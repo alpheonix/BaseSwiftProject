@@ -1,10 +1,4 @@
-//
-//  LoginViewController.swift
-//  SampleWebAPI
-//
-//  Created by Arthur BLANC on 02/02/2019.
-//  Copyright © 2019 Digipolitan. All rights reserved.
-//
+
 
 import UIKit
 
@@ -18,13 +12,6 @@ class LoginViewController: UIViewController {
             addGradient()
         }
 
-   
-        
-        // Do any additional setup after loading the view.
-    
-    
-  
-    
     class func newInstance() -> LoginViewController {
         let mlvc = LoginViewController()
         return mlvc
@@ -40,7 +27,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func ConnectButton(_ sender: UIButton) {
         ConnexionService.default.getToken { (connect) in
-            print(connect.token)
             guard let username = self.UserField.text,
             let pwd = self.PasswordField.text  else {
                     return
@@ -48,8 +34,6 @@ class LoginViewController: UIViewController {
             let token = connect.token
             
             ConnexionService.default.connect(token: token,username: username, pwd: pwd) { (session) in
-                print ("connect")
-                print (session)
                 if session.account_id != 0 {
                     MovieService.default.getMovies { (movies) in
                         let next = NewMoviesListViewController.newInstance(movies: movies, session: session)
@@ -76,7 +60,7 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         gradient?.frame = view.bounds
         let mainImage = UIImage(named:"logo")
-        var mainImageView = UIImageView(image:mainImage)
+        let mainImageView = UIImageView(image:mainImage)
         mainImageView.center = self.view.center
         mainImageView.contentMode = .scaleAspectFit
         self.view.addSubview(mainImageView)

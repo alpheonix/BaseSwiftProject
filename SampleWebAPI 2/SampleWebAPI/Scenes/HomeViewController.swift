@@ -1,10 +1,4 @@
-//
-//  AppleViewController.swift
-//  SampleWebAPI
-//
-//  Created by Benoit BRIATTE on 10/12/2018.
-//  Copyright © 2018 Digipolitan. All rights reserved.
-//
+
 
 import UIKit
 
@@ -24,8 +18,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addGradient()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func SignInButton(_ sender: UIButton) {
@@ -34,7 +26,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func connectToMovieAPI(_ sender: UIButton) {
-        print("test")
         // TODO
         let next = LoginViewController.newInstance()
         self.navigationController?.pushViewController(next, animated: true)
@@ -47,7 +38,7 @@ class HomeViewController: UIViewController {
         
         gradient?.frame = view.bounds
         let mainImage = UIImage(named:"logo")
-        var mainImageView = UIImageView(image:mainImage)
+        let mainImageView = UIImageView(image:mainImage)
         mainImageView.center = self.view.center
         mainImageView.contentMode = .scaleAspectFit
         self.view.addSubview(mainImageView)

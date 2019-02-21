@@ -37,20 +37,20 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phG-ez-6kK">
-                    <rect key="frame" x="31" y="93" width="267" height="30"/>
+                    <rect key="frame" x="31" y="93" width="313" height="30"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-68-GC7">
-                    <rect key="frame" x="31" y="40" width="210" height="26"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-68-GC7">
+                    <rect key="frame" x="31" y="40" width="313" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="0.95058428490264268" blue="0.91746279379216533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pd3-sO-659">
-                    <rect key="frame" x="31" y="180" width="267" height="30"/>
+                    <rect key="frame" x="31" y="180" width="313" height="30"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,16 +60,17 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="adU-hh-Lid" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="0hJ-g8-0T6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pd3-sO-659" secondAttribute="trailing" constant="31" id="6AO-FE-rpl"/>
                 <constraint firstItem="phG-ez-6kK" firstAttribute="top" secondItem="YJg-68-GC7" secondAttribute="bottom" constant="27" id="8hx-kt-pKo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="adU-hh-Lid" secondAttribute="bottom" constant="59" id="B99-su-OKl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="phG-ez-6kK" secondAttribute="trailing" constant="31" id="Jen-3x-Qpt"/>
                 <constraint firstItem="Pd3-sO-659" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="31" id="MMl-Ik-NGo"/>
                 <constraint firstItem="Pd3-sO-659" firstAttribute="trailing" secondItem="phG-ez-6kK" secondAttribute="trailing" id="Mx4-Pe-WgP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YJg-68-GC7" secondAttribute="trailing" constant="134" id="Pbg-0u-PLJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YJg-68-GC7" secondAttribute="trailing" constant="31" id="Pbg-0u-PLJ"/>
                 <constraint firstItem="YJg-68-GC7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Sln-go-6il"/>
                 <constraint firstItem="Pd3-sO-659" firstAttribute="leading" secondItem="phG-ez-6kK" secondAttribute="leading" id="aLx-Hp-A1l"/>
                 <constraint firstItem="phG-ez-6kK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="73" id="ak2-gG-zhb"/>
                 <constraint firstItem="Pd3-sO-659" firstAttribute="top" secondItem="phG-ez-6kK" secondAttribute="bottom" constant="57" id="lyT-SP-WNt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pd3-sO-659" secondAttribute="trailing" constant="77" id="px8-au-9w2"/>
                 <constraint firstItem="YJg-68-GC7" firstAttribute="leading" secondItem="phG-ez-6kK" secondAttribute="leading" id="qO2-E9-4Bo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adU-hh-Lid" secondAttribute="trailing" constant="53" id="wdb-wB-DEq"/>
             </constraints>
