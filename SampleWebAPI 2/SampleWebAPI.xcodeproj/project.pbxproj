@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D34CD332219D36000FE86B4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D34CD322219D36000FE86B4 /* logo.png */; };
+		3DBFAC17221EEC5900EA4878 /* SeachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBFAC15221EEC5900EA4878 /* SeachViewController.swift */; };
+		3DBFAC18221EEC5900EA4878 /* SeachViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBFAC16221EEC5900EA4878 /* SeachViewController.xib */; };
 		5E0F1A95F4D679162F92CB67 /* Pods_SampleWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B1C9800F3DAD05767F9741 /* Pods_SampleWebAPI.framework */; };
 		965C582521E4BF6B00F8D789 /* ConnexionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C582421E4BF6B00F8D789 /* ConnexionService.swift */; };
 		965C58B62205C80100F8D789 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C58B42205C80100F8D789 /* LoginViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		174399F4D9E17DF835E21FA2 /* Pods-SampleWebAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleWebAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleWebAPI/Pods-SampleWebAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		3D34CD322219D36000FE86B4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
+		3DBFAC15221EEC5900EA4878 /* SeachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachViewController.swift; sourceTree = "<group>"; };
+		3DBFAC16221EEC5900EA4878 /* SeachViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeachViewController.xib; sourceTree = "<group>"; };
 		68B1C9800F3DAD05767F9741 /* Pods_SampleWebAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleWebAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		965C582421E4BF6B00F8D789 /* ConnexionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionService.swift; sourceTree = "<group>"; };
 		965C58B42205C80100F8D789 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				965C58B42205C80100F8D789 /* LoginViewController.swift */,
+				3DBFAC15221EEC5900EA4878 /* SeachViewController.swift */,
+				3DBFAC16221EEC5900EA4878 /* SeachViewController.xib */,
 				965C58B52205C80100F8D789 /* LoginViewController.xib */,
 				965C58B92205CBE500F8D789 /* HomeViewController.swift */,
 				965C58BA2205CBE500F8D789 /* HomeViewController.xib */,
@@ -227,6 +233,7 @@
 				965C58B72205C80100F8D789 /* LoginViewController.xib in Resources */,
 				96648CC3220B95F90089F5EA /* DetailMovieViewController.xib in Resources */,
 				A3A4F36621BEA4710048A2CC /* Assets.xcassets in Resources */,
+				3DBFAC18221EEC5900EA4878 /* SeachViewController.xib in Resources */,
 				965C58BC2205CBE500F8D789 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965C58B62205C80100F8D789 /* LoginViewController.swift in Sources */,
+				3DBFAC17221EEC5900EA4878 /* SeachViewController.swift in Sources */,
 				96648CC2220B95F90089F5EA /* DetailMovieViewController.swift in Sources */,
 				A3A4F35F21BEA46E0048A2CC /* AppDelegate.swift in Sources */,
 				96648CCD221824B60089F5EA /* BestMovies.swift in Sources */,
