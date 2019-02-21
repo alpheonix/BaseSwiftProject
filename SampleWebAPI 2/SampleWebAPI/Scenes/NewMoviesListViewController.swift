@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import Alamofire
 class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
 
     var movies: [Movie]!
     var session: Session!
     
     @IBOutlet var searchBar: UISearchBar!
+@IBOutlet var seachView: UITableView!
     
     @IBOutlet var movieTableView: UITableView!
     
@@ -63,11 +64,43 @@ class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //tu fais la requete https://developers.themoviedb.org/3/search/search-movie
         //tu change de view
-        // tu cree une liste 
+        // tu cree une liste
+        let  text = searchBar.text!
         
-        print("serchbaar")
+        MovieService.default.search(text: text) { (res) in
+                        let movie = NewMoviesListViewController.newInstance(movies: res, session: self.session)
+                        self.navigationController?.pushViewController(movie, animated: true)
+            
+                    }
+        
+        
+        print("text")
+           print("sech \(text)")
+        
     }
+//     var searchedfilm = [String]()
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        print("sech \(searchText)")
+//        Alamofire.request("https://api.themoviedb.org/3/search/movie?api_key=c2a65c4ec5c2e0b8847caec950444862&language=en-US&query=\(searchText)&page=1&include_adult=false").responseJSON{ (res) in
+//           // print("je suis la  \(res)")
+//            guard let result = res.value as? [String:Any],
+//                let resultat2 = result["results"] as? [[String:Any]] else{return}
+//
+//            let movie = resultat2.compactMap({ (elem) -> Movie? in
+//                return Movie(json: elem)
+//            })
+//            self.movies.append(movie[0])
+//            print("laaaa \(movie)")
+//            self.seachView.reloadData()
+//        }
+//
+//    }
     
+    
+      
+
+    
+   
     
 }
 
