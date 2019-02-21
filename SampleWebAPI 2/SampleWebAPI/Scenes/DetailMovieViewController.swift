@@ -22,7 +22,7 @@ class DetailMovieViewController: UIViewController {
     var session: Session!
     
     
-    @IBAction func addFavourite(_ sender: Any) {
+    @objc func addFavourite() {
         MovieService.default.addAsFavourite(id: movie.id,session: session) { (res) in
             if res {
                 let alert = UIAlertController(title: "Favoris", message: "Le film a été ajouté a la liste des favoris", preferredStyle: .alert)
@@ -32,13 +32,22 @@ class DetailMovieViewController: UIViewController {
             print("fin")
         }
     }
+    @objc func disconnect(){
+        ConnexionService.default.disconect(session_id: session.session_id) { (success) -> Bool in
+            if(success){
+                let home = HomeViewController.newInstance()
+                self.navigationController?.pushViewController(home, animated: true)
+            }
+            return true
+        }
+    }
     override func viewDidLoad() {
         descriptionMovieDetail.backgroundColor = UIColor.clear
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Image")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-
+        
         self.descriptionMovieDetail.text = self.movie.description
         self.descriptionMovieDetail.textColor = UIColor(displayP3Red: 255.0, green: 255.0, blue: 255.0, alpha: 1)
         print(self.movie.titre)
@@ -49,6 +58,10 @@ class DetailMovieViewController: UIViewController {
         let imageURL = URL(string: self.movie.poster)
         let imageData = try! Data(contentsOf: imageURL!)
         self.ImageMovieDetail.image = UIImage(data: imageData)
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(disconnect)),
+            UIBarButtonItem(title: "Favoris", style: .plain, target: self, action: #selector(addFavourite))
+        ]
         super.viewDidLoad()
         
         

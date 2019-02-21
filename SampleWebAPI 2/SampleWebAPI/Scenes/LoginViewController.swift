@@ -47,13 +47,19 @@ class LoginViewController: UIViewController {
             }
             let token = connect.token
             
-            ConnexionService.default.connect(token: token,username: username, pwd: pwd){ (session) in
-                
+            ConnexionService.default.connect(token: token,username: username, pwd: pwd) { (session) in
+                print ("connect")
+                print (session)
                 if session.account_id != 0 {
                     MovieService.default.getMovies { (movies) in
                         let next = NewMoviesListViewController.newInstance(movies: movies, session: session)
                         self.navigationController?.pushViewController(next, animated: true)
                     }
+                }
+                if (session.account_id == 0){
+                    let alert = UIAlertController(title: "Errorr", message: "Le nom d'utilisateur ou le mot de passe est incorrect", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
                 }
                 return session
                 

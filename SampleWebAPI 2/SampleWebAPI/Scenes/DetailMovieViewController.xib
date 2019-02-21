@@ -49,24 +49,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-dY-DP8">
-                    <rect key="frame" x="65" y="82" width="245" height="30"/>
-                    <color key="backgroundColor" red="0.065660580989999995" green="0.086179845039999994" blue="0.49807161090000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Favoris">
-                        <color key="titleColor" red="0.86518377590673579" green="0.85945792129570353" blue="0.076306549329543269" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
-                    </state>
-                    <connections>
-                        <action selector="addFavourite:" destination="-1" eventType="touchUpInside" id="2ZB-7R-0lj"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="xyg-dY-DP8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2Da-lW-SQQ"/>
                 <constraint firstItem="Vse-L8-P8g" firstAttribute="centerX" secondItem="y1b-me-rJw" secondAttribute="centerX" id="3W2-ZV-gsP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ccN-Kz-Vz6" secondAttribute="bottom" constant="205" id="4Cj-h1-jTp"/>
                 <constraint firstItem="ccN-Kz-Vz6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-23" id="A6G-3D-vL1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xyg-dY-DP8" secondAttribute="trailing" constant="65" id="Gw6-CF-DGV"/>
                 <constraint firstItem="2xM-C9-zpm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="IGc-bY-Ugj"/>
                 <constraint firstItem="Vse-L8-P8g" firstAttribute="centerX" secondItem="ccN-Kz-Vz6" secondAttribute="centerX" id="KpS-So-Gor"/>
                 <constraint firstItem="ccN-Kz-Vz6" firstAttribute="top" secondItem="y1b-me-rJw" secondAttribute="bottom" constant="22" id="Mp5-e2-fFp"/>
@@ -77,7 +65,6 @@
                 <constraint firstItem="ccN-Kz-Vz6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="am0-vj-2yM"/>
                 <constraint firstItem="2xM-C9-zpm" firstAttribute="trailing" secondItem="ccN-Kz-Vz6" secondAttribute="trailing" id="dU1-Xu-pVU"/>
                 <constraint firstItem="2xM-C9-zpm" firstAttribute="top" secondItem="ccN-Kz-Vz6" secondAttribute="bottom" constant="8" id="qJj-Or-OVm"/>
-                <constraint firstItem="xyg-dY-DP8" firstAttribute="top" secondItem="Vse-L8-P8g" secondAttribute="bottom" constant="10" id="x27-F1-nXx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140" y="48.125937031484263"/>
