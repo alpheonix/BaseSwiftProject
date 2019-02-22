@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        navigationItem.title = "Flix"
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
         super.viewDidLoad()
         addGradient()
     }

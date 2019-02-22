@@ -3,16 +3,17 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
     var gradient: CAGradientLayer?
     var bgImage: UIImageView?
     let rect = CGRect(x: 100, y: 250, width: 180, height: 180)
         override func viewDidLoad() {
+            navigationItem.title = "Flix"
             super.viewDidLoad()
             addGradient()
         }
 
     class func newInstance() -> LoginViewController {
+        
         let mlvc = LoginViewController()
         return mlvc
     }

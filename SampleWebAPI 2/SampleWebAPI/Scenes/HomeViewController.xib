@@ -31,7 +31,7 @@
                         <constraint firstAttribute="height" constant="78" id="gcc-sy-tcy"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Login"/>
+                    <state key="normal" title="Connexion"/>
                     <connections>
                         <action selector="connectToMovieAPI:" destination="-1" eventType="touchUpInside" id="TB8-Hq-Q0f"/>
                     </connections>
@@ -43,7 +43,7 @@
                         <constraint firstAttribute="height" constant="71" id="dsB-JL-EvX"/>
                     </constraints>
                     <color key="tintColor" red="0.18933245304849167" green="0.95904319693226114" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Signin">
+                    <state key="normal" title="Inscription">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

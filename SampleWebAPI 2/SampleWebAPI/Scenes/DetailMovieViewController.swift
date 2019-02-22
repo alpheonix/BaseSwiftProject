@@ -42,6 +42,7 @@ class DetailMovieViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
+        navigationItem.title = "Flix"
         descriptionMovieDetail.backgroundColor = UIColor.clear
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Image")

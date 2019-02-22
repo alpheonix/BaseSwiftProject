@@ -19,15 +19,16 @@ class NewMoviesListViewController: UIViewController,UISearchBarDelegate {
         return mlvc
     }
     override func viewDidLoad() {
-        
+        navigationItem.title = "Flix"
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Image")
         backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         searchBar.delegate = self
         self.searchBar.becomeFirstResponder()
-
-        
+        let searchBarBackgroundImage = UIImage()
+        searchBar.setBackgroundImage(searchBarBackgroundImage, for: .any, barMetrics: .default)
+        searchBar.scopeBarBackgroundImage = searchBarBackgroundImage
         super.viewDidLoad()
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
